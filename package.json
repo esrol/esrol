@@ -1,0 +1,14 @@
+{
+  "config": {
+    "unsafe-perm": true
+  },
+  "scripts": {
+    "install": "sudo npm install --unsafe-perm -g supervisor"
+  },
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "colors": "^1.1.2",
+    "socket.io": "^1.3.7",
+    "sticky-session": "^0.1.0"
+  }
+}

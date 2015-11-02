@@ -1,0 +1,47 @@
+{
+  "autoload": {
+    "modules": {
+      "fs": "fs",
+      "path": "path",
+      "util": "util",
+      "colors": "colors",
+      "bdParser": "body-parser",
+      "path": "path"
+    }
+  },
+  "debug": {
+    "enabled": false
+  },
+  "environment": "development",
+  "paths": {
+    "apiPath": "/",
+    "temporaryPath": "/temporary/", 
+    "publicPath": "../some/path/"   
+  },
+  "benchmarks": {
+    "enable": false,
+    "cores": 8  
+  },
+  "cluster": false,
+  "servers": {
+    "http": {
+      "webSocket": false,
+      "enabled": true,
+      "methods": ["get", "post", "delete", "put"],
+      "port": 3333
+    },
+    "https": {
+      "websocket": false,
+      "enabled": false,
+      "methods": ["get", "post", "delete", "put"]
+    },    
+    "tcp": {
+      "enabled": false,
+      "port": 3334     
+    },
+    "udp": {
+      "enabled": false,
+      "port": 3335     
+    }    
+  }
+}
