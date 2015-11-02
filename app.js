@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var application = require('./core/autoload.js');
-var cofnig;
+var config;
 try {
   config = JSON.parse(fs.readFileSync(__dirname + '/config/config.json', {encoding: 'utf8'}));
 } catch(e) {
