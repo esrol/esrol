@@ -1,10 +1,10 @@
 'use strict';
 module.exports = {
   implements: ['sockets.interfaces.sockets'],
-	init: function(server) {
+  init: function(server) {
 
-	},	
-	handle: function(socket) {
+  },  
+  handle: function(socket) {
 
-	},  
+  },  
 };
