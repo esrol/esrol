@@ -1,20 +1,31 @@
 {
   "autoload": {
+    "directories": [
+      "adapters", 
+      "controllers", 
+      "core", 
+      "initializers", 
+      "middlewares", 
+      "sockets",
+      "mixins",
+      "routes"
+    ],
     "modules": {
       "fs": "fs",
       "path": "path",
       "util": "util",
       "colors": "colors",
+      "cluster": "cluster",
       "bdParser": "body-parser",
       "path": "path"
-    }
+    },
+    "filesToSkip": {}
   },
   "debug": {
-    "enabled": false
+    "enabled": true
   },
   "environment": "development",
   "paths": {
-    "apiPath": "/",
     "temporaryPath": "/temporary/", 
     "publicPath": "../some/path/"   
   },
@@ -22,7 +33,10 @@
     "enable": false,
     "cores": 8  
   },
-  "cluster": false,
+  "cluster": {
+    "enabled": false,
+    "cores": 2
+  },
   "servers": {
     "http": {
       "webSocket": false,
@@ -31,9 +45,14 @@
       "port": 3333
     },
     "https": {
-      "websocket": false,
+      "secureWebSocket": false,
       "enabled": false,
-      "methods": ["get", "post", "delete", "put"]
+      "methods": ["get", "post", "delete", "put"],
+      "port": 8000,
+      "host": "",
+      "rejectUnauthorized": "",
+      "requestCert": "",
+      "agent": ""
     },    
     "tcp": {
       "enabled": false,
@@ -41,6 +60,7 @@
     },
     "udp": {
       "enabled": false,
+      "type": "udp4",
       "port": 3335     
     }    
   }

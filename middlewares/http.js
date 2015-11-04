@@ -1,6 +1,6 @@
 'use strict';
 module.exports = {
-  extends: ['core.logger'],
+  extends: ['core.components.logger.logger'],
   priority: 1,
   init: function() {
     return this.callback;

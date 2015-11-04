@@ -9,6 +9,7 @@
     "body-parser": "^1.4.3",
     "colors": "^1.1.2",
     "socket.io": "^1.3.7",
-    "sticky-session": "^0.1.0"
+    "sticky-session": "^0.1.0",
+    "string-hash": "^1.1.0"
   }
 }
