@@ -2,10 +2,7 @@
   "name": "xena",
   "description": "Later",  
   "main": "index.js",
-  "author": {
-    "name": "Ivaylo Ivanov",
-    "email": "Ivchoyyyy@gmail.com"
-  },
+  "author": "Ivaylo Ivanov <Ivchoyyyy@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/ivaylopivanov/xena"
@@ -13,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/ivaylopivanov/xena"
   },  
-  "version": "0.1.3",
+  "version": "0.1.4",
   "licenses": [
     {
       "type": "MIT",
