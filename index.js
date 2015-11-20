@@ -1,1 +1,1 @@
-require ('./core/index.js');
+require ('esrol-commander');

@@ -1,14 +1,14 @@
 {
-  "name": "esrol",
-  "description": "Later",  
+  "name": "esrol-app",
+  "description": "description",  
   "main": "index.js",
-  "author": "Ivaylo Ivanov <Ivchoyyyy@gmail.com>",
+  "author": "",
   "repository": {
     "type": "git",
-    "url": "git://github.com/esrol/esrol"
+    "url": ""
   },
   "bugs": {
-    "url": "https://github.com/esrol/esrol"
+    "url": ""
   },  
   "version": "0.0.1",
   "licenses": "MIT",
