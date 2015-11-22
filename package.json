@@ -2,7 +2,7 @@
   "name": "esrol",
   "description": "Later",  
   "main": "index.js",
-  "author": "Ivaylo Ivanov <Ivchoyyyy@gmail.com>",
+  "author": "Ivaylo Ivanov <ivaylo.ivanov.ipi@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/esrol/esrol"
@@ -10,7 +10,10 @@
   "bugs": {
     "url": "https://github.com/esrol/esrol"
   },  
-  "version": "0.0.1",
+  "bin": {
+    "esrol": "./bin/esrol"
+  },  
+  "version": "0.0.2",
   "licenses": "MIT",
   "engines": {
     "node": ">= 4.0.0"
@@ -22,6 +25,6 @@
 
   },
   "dependencies": {
-    
+    "esrol-commander": "0.0.1"
   }
 }
