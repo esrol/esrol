@@ -1,7 +1,8 @@
 {
   "name": "esrol-app",
-  "description": "description",  
+  "description": "description",
   "main": "index.js",
+  "private": true,
   "author": "",
   "repository": {
     "type": "git",
@@ -9,19 +10,49 @@
   },
   "bugs": {
     "url": ""
-  },  
+  },
   "version": "0.0.1",
   "licenses": "MIT",
   "engines": {
     "node": ">= 4.0.0"
-  },    
+  },
   "config": {
-
+    "esrol": {
+      "installed": false
+    }
   },
   "scripts": {
-
+    "test": "node_modules/.bin/mocha ./tests/test",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha ./tests/test",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "app": "node_modules/grunt-cli/bin/grunt",
+    "start": "node_modules/pm2/bin/pm2 start app.js",
+    "start-custom": "node_modules/pm2/bin/pm2 start ",
+    "list": "node_modules/pm2/bin/pm2 list",
+    "stop": "node_modules/pm2/bin/pm2 stop app.js",
+    "stop-custom": "node_modules/pm2/bin/pm2 stop ",
+    "stop-all": "node_modules/pm2/bin/pm2 stop all"
   },
   "dependencies": {
-    
+    "esrol-server-app": "0.0.1",
+    "pm2": "^0.15.10"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.4",
+    "chai": "^3.4.0",
+    "debug": "^2.2.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-concurrent": "^2.1.0",
+    "grunt-eslint": "^17.3.1",
+    "grunt-force-task": "^1.0.0",
+    "grunt-node-inspector": "^0.4.1",
+    "grunt-nodemon": "^0.4.0",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.3",
+    "mocha-sinon": "^1.1.4",
+    "node-inspector": "^0.12.3",
+    "nodemon": "^1.8.1",
+    "sinon": "^1.17.2"
   }
 }
