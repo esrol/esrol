@@ -33,7 +33,7 @@
     "stop-custom": "node_modules/pm2/bin/pm2 stop ",
     "stop-all": "node_modules/pm2/bin/pm2 stop all"
   },
-  "esrolDependencies": {
+  "dependencies": {
     "coveralls": "^2.11.4",
     "chai": "^3.4.0",
     "debug": "^2.2.0",
