@@ -33,11 +33,10 @@
     "stop-custom": "node_modules/pm2/bin/pm2 stop ",
     "stop-all": "node_modules/pm2/bin/pm2 stop all"
   },
-  "dependencies": {
+  "devDependencies": {
     "coveralls": "^2.11.4",
     "chai": "^3.4.0",
     "debug": "^2.2.0",
-    "esrol-server-app": "0.0.1",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-concurrent": "^2.1.0",
@@ -48,9 +47,11 @@
     "istanbul": "^0.4.1",
     "mocha": "^2.3.3",
     "mocha-sinon": "^1.1.4",
-    "node-inspector": "^0.12.3",
-    "nodemon": "^1.8.1",
-    "pm2": "^0.15.10",
-    "sinon": "^1.17.2"
+    "sinon": "^1.17.2",
+    "touch": "^1.0.0"
+  },
+  "dependencies": {
+    "esrol-server-app": "0.0.1",
+    "pm2": "^0.15.10"
   }
 }

@@ -1,10 +1,10 @@
 module.exports = function (grunt) {
   grunt.initConfig({
     concurrent: {
-        target: ['node-inspector', 'nodemon'],
-        options: {
-          logConcurrentOutput: true
-        }
+      target: ['node-inspector', 'nodemon'],
+      options: {
+        logConcurrentOutput: true
+      }
     },
     'node-inspector': {
       dev: {}
@@ -32,8 +32,8 @@ module.exports = function (grunt) {
     },
     eslint: {
       options: {
-          configFile: '.eslintrc',
-          rulePaths: ['']
+        configFile: '.eslintrc',
+        rulePaths: ['']
       },
       all: {
         src: ['app/']
