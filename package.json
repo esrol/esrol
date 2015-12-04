@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/esrol/esrol"
   },
-  "version": "0.0.6",
+  "version": "0.0.7",
   "licenses": "MIT",
   "engines": {
     "node": ">= 4.0.0"
