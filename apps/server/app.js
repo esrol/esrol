@@ -1,1 +1,1 @@
-require ('esrol-server-app');
+require('esrol-server-app');
