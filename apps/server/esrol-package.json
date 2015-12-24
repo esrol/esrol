@@ -51,7 +51,7 @@
     "touch": "^1.0.0"
   },
   "dependencies": {
-    "esrol-server-app": "0.0.4",
+    "esrol-server-app": "0.0.7",
     "pm2": "^0.15.10"
   }
 }
