@@ -1,7 +1,7 @@
 {
-  "name": "esrol-app",
-  "description": "description",
-  "main": "index.js",
+  "name": "",
+  "description": "",
+  "main": "app.js",
   "private": true,
   "author": "",
   "repository": {
@@ -51,7 +51,7 @@
     "touch": "^1.0.0"
   },
   "dependencies": {
-    "esrol-server-app": "0.0.7",
+    "esrol-server-app": "0.0.8",
     "pm2": "^0.15.10"
   }
 }
