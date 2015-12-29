@@ -7,6 +7,26 @@ let index = path.join(__dirname, '..', 'index.js');
 let command = 'node ' + index + ' --tests';
 let cp = require('ncp');
 let out = path.join(__dirname, 'out');
+require('mocha-sinon');
+
+describe('', () => {
+  beforeEach(function() { this.sinon.stub(console, 'log'); });
+  it('App should be created in /tests/out dir', (done) => {
+    if (fs.existsSync(out)) {
+      removeSync(out);
+    }
+    cp(path.join(__dirname, 'mocks'), __dirname, () => {
+      process.argv[2] = '--tests';
+      require('../index');
+      setTimeout(() => {
+        onAppCreated('Happy Coding ^_^', 'exec');
+        let Esrol = require('../lib/esrol');
+        new Esrol(null, out);
+        done();
+      }, 200);
+    });
+  });
+});
 
 function removeSync(dir) {
   if( fs.existsSync(dir) ) {
@@ -54,21 +74,3 @@ function onAppCreated(output, shouldExec) {
     });
   });
 }
-
-describe('On post install Esrol', () => {
-  it('App should be created in /tests/out dir', (done) => {
-    if (fs.existsSync(out)) {
-      removeSync(out);
-    }
-    cp(path.join(__dirname, 'mocks'), __dirname, () => {
-      process.argv[2] = '--tests';
-      require('../index');
-      setTimeout(() => {
-        onAppCreated('Happy Coding ^_^', 'exec');
-        let Esrol = require('../lib/esrol');
-        new Esrol(null, out);
-        done();
-      }, 200);
-    });
-  });
-});
