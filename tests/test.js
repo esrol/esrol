@@ -49,9 +49,9 @@ function onAppCreated(output) {
       of apps/server again, which can cause adding removed
       files/directories or merging them. So we'll remove one directory from
       the installed app and will run the command again. directory
-      "tests/out/app/middlewares/udpMiddlewares" should not exists`;
+      "tests/out/app/middlewares/http-middlewares" should not exists`;
     it(should, (done) => {
-      let dir = path.join(out, 'app', 'middlewares', 'udpMiddlewares');
+      let dir = path.join(out, 'app', 'middlewares', 'http-middlewares');
       expect(fs.existsSync(dir)).to.be.true;
       removeSync(dir);
       expect(fs.existsSync(dir)).to.be.false;

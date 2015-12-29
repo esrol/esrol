@@ -2,9 +2,9 @@
 [![Build Status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 
-A wrapper of all Esrol server components for creating performance efficient, well structured - by following "convention over configuration" approach, but also configurable, server-side applications.
+A wrapper of all Esrol server components for creating performance efficient, well structured (by following "convention over configuration" approach), but also configurable, server-side applications.
 
-Esrol as component is responsible for installing the server app and its dependencies.
+Esrol as a component is responsible for installing the server app and its dependencies.
 
 
 The [Wiki](https://github.com/esrol/esrol-server-app/wiki) contains everything that you need.
