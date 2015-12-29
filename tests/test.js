@@ -27,7 +27,8 @@ function getJsonFromFile(file) {
   return JSON.parse(fs.readFileSync(file));
 }
 
-function onAppCreated(output) {
+function onAppCreated(output, shouldExec) {
+
   let packageJson = path.join(out, 'package.json');
   describe('On app created in /test/out dir', () => {
     it('Output should be equal to "Happy Coding ^_^"', () => {
@@ -59,22 +60,40 @@ function onAppCreated(output) {
         expect(fs.existsSync(dir)).to.be.false;
         done();
       });
-    })
-  })
-}
-
-if (fs.existsSync(out)) {
-  removeSync(out);
+    });
+  });
+  if (shouldExec) {
+    describe('On post install Esrol', () => {
+      it('App should be created in /tests/out dir', (done) => {
+        if (fs.existsSync(out)) {
+          removeSync(out);
+        }
+        cp(path.join(__dirname, 'mocks'), __dirname, () => {
+          let cmd = childProcess.exec(command);
+          cmd.stdout.on('data', (r) => {
+            onAppCreated(r);
+            done();
+          });
+        })
+      })
+    });
+  }
 }
 
 describe('On post install Esrol', () => {
   it('App should be created in /tests/out dir', (done) => {
+    if (fs.existsSync(out)) {
+      removeSync(out);
+    }
     cp(path.join(__dirname, 'mocks'), __dirname, () => {
-      let cmd = childProcess.exec(command);
-      cmd.stdout.on('data', (r) => {
-        onAppCreated(r);
+      process.argv[2] = '--tests';
+      require('../index');
+      setTimeout(() => {
+        onAppCreated('Happy Coding ^_^', 'exec');
+        let Esrol = require('../lib/esrol');
+        new Esrol(null, out);
         done();
-      });
-    })
-  })
+      }, 200);
+    });
+  });
 });

@@ -34,6 +34,7 @@
     "stop-all": "node_modules/pm2/bin/pm2 stop all"
   },
   "devDependencies": {
+    "tests": "1.2.3",
     "coveralls": "^2.11.4",
     "chai": "^3.4.0",
     "debug": "^2.2.0",
@@ -51,6 +52,7 @@
     "touch": "^1.0.0"
   },
   "dependencies": {
+    "tests": "1.2.4",
     "esrol-server-app": "0.0.8",
     "pm2": "^0.15.10"
   }
