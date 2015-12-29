@@ -3,7 +3,6 @@ let expect = require('chai').expect;
 let fs = require ('fs');
 let path = require ('path');
 let index = path.join(__dirname, '..', 'index.js');
-let childProcess = require('child_process');
 // specifically add test flag, otherwise the path will be wrong
 let command = 'node ' + index + ' --tests';
 let cp = require('ncp');
@@ -45,21 +44,13 @@ function onAppCreated(output, shouldExec) {
     });
     let should = `When esrol is installed for first time, the whole content in
       apps/server will be moved to the main directory (where "npm install esrol"
-      was runned) and since all of the dependencies are added to "package.json",
-      when we run "npm install" again, esrol should not move the whole content
-      of apps/server again, which can cause adding removed
-      files/directories or merging them. So we'll remove one directory from
-      the installed app and will run the command again. directory
-      "tests/out/app/middlewares/http-middlewares" should not exists`;
+      was runned) and all of the dependencies are added to "package.json"`;
     it(should, (done) => {
       let dir = path.join(out, 'app', 'middlewares', 'http-middlewares');
       expect(fs.existsSync(dir)).to.be.true;
       removeSync(dir);
       expect(fs.existsSync(dir)).to.be.false;
-      let cmd = childProcess.exec(command, () => {
-        expect(fs.existsSync(dir)).to.be.false;
-        done();
-      });
+      done();
     });
   });
 }
