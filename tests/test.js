@@ -62,22 +62,6 @@ function onAppCreated(output, shouldExec) {
       });
     });
   });
-  if (shouldExec) {
-    describe('On post install Esrol', () => {
-      it('App should be created in /tests/out dir', (done) => {
-        if (fs.existsSync(out)) {
-          removeSync(out);
-        }
-        cp(path.join(__dirname, 'mocks'), __dirname, () => {
-          let cmd = childProcess.exec(command);
-          cmd.stdout.on('data', (r) => {
-            onAppCreated(r);
-            done();
-          });
-        })
-      })
-    });
-  }
 }
 
 describe('On post install Esrol', () => {
