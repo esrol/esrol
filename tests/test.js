@@ -3,30 +3,11 @@ let expect = require('chai').expect;
 let fs = require ('fs');
 let path = require ('path');
 let index = path.join(__dirname, '..', 'index.js');
+let childProcess = require('child_process');
 // specifically add test flag, otherwise the path will be wrong
 let command = 'node ' + index + ' --tests';
 let cp = require('ncp');
 let out = path.join(__dirname, 'out');
-require('mocha-sinon');
-
-describe('', () => {
-  beforeEach(function() { this.sinon.stub(console, 'log'); });
-  it('App should be created in /tests/out dir', (done) => {
-    if (fs.existsSync(out)) {
-      removeSync(out);
-    }
-    cp(path.join(__dirname, 'mocks'), __dirname, () => {
-      process.argv[2] = '--tests';
-      require('../index');
-      setTimeout(() => {
-        onAppCreated('Happy Coding ^_^', 'exec');
-        let Esrol = require('../lib/esrol');
-        new Esrol(null, out);
-        done();
-      }, 200);
-    });
-  });
-});
 
 function removeSync(dir) {
   if( fs.existsSync(dir) ) {
@@ -64,13 +45,39 @@ function onAppCreated(output, shouldExec) {
     });
     let should = `When esrol is installed for first time, the whole content in
       apps/server will be moved to the main directory (where "npm install esrol"
-      was runned) and all of the dependencies are added to "package.json"`;
+      was runned) and since all of the dependencies are added to "package.json",
+      when we run "npm install" again, esrol should not move the whole content
+      of apps/server again, which can cause adding removed
+      files/directories or merging them. So we'll remove one directory from
+      the installed app and will run the command again. directory
+      "tests/out/app/middlewares/http-middlewares" should not exists`;
     it(should, (done) => {
       let dir = path.join(out, 'app', 'middlewares', 'http-middlewares');
       expect(fs.existsSync(dir)).to.be.true;
       removeSync(dir);
       expect(fs.existsSync(dir)).to.be.false;
-      done();
+      let cmd = childProcess.exec(command, () => {
+        expect(fs.existsSync(dir)).to.be.false;
+        done();
+      });
     });
   });
 }
+
+describe('On post install Esrol', () => {
+  it('App should be created in /tests/out dir', (done) => {
+    if (fs.existsSync(out)) {
+      removeSync(out);
+    }
+    cp(path.join(__dirname, 'mocks'), __dirname, () => {
+      process.argv[2] = '--tests';
+      require('../index');
+      setTimeout(() => {
+        onAppCreated('Happy Coding ^_^', 'exec');
+        let Esrol = require('../lib/esrol');
+        new Esrol(null, out);
+        done();
+      }, 200);
+    });
+  });
+});
