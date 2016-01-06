@@ -26,11 +26,12 @@
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha ./tests/test",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "app": "node_modules/grunt-cli/bin/grunt",
-    "start": "node_modules/pm2/bin/pm2 start app.js",
+    "start": "node_modules/pm2/bin/pm2 startup && node_modules/pm2/bin/pm2 start app.js",
     "start-custom": "node_modules/pm2/bin/pm2 start ",
     "list": "node_modules/pm2/bin/pm2 list",
     "stop": "node_modules/pm2/bin/pm2 stop app.js",
     "stop-custom": "node_modules/pm2/bin/pm2 stop ",
+    "delete": "node_modules/pm2/bin/pm2 delete app.js",
     "stop-all": "node_modules/pm2/bin/pm2 stop all"
   },
   "devDependencies": {
