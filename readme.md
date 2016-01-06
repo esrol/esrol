@@ -7,7 +7,7 @@ A wrapper of all Esrol server components for creating performance efficient, wel
 Esrol as a component is responsible for installing the server app and its dependencies.
 
 
-The [Wiki](https://github.com/esrol/esrol-server-app/wiki) contains everything that you need.
+The [Wiki](https://github.com/esrol/esrol-server-app/wiki) contains information about installation and API documentation.
 
 [npm-image]: https://badge.fury.io/js/esrol.svg
 [npm-url]: https://npmjs.org/package/esrol
