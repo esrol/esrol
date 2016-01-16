@@ -2,6 +2,16 @@
 [![Build Status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 
+# Installation
+
+```sh
+npm init
+npm install esrol
+```
+
+## Warning
+_`npm init` is a must_
+
 A wrapper of all Esrol server components for creating performance efficient, well structured (by following "convention over configuration" approach), but also configurable, server-side applications.
 
 Esrol as a component is responsible for installing the server app and its dependencies.
