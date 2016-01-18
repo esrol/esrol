@@ -18,7 +18,6 @@ module.exports = function (grunt) {
           watchedFolders: ['test', 'app'],
           delayTime: 1,
           nostdin: true,
-          exitcrash: true,
           legacyWatch: true,
           nodeArgs: ['--debug'],
           callback: function(nodemon) {
