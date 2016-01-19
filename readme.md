@@ -12,6 +12,16 @@ npm install esrol
 ## Warning
 _`npm init` is a must_
 
+## Compatibility
+
+| Node Version |
+| ---- |
+| >= 4.x |
+
+| NPM Version |
+| ---- |
+| >= 3.3.6 |
+
 A wrapper of all Esrol server components for creating performance efficient, well structured (by following "convention over configuration" approach), but also configurable, server-side applications.
 
 Esrol as a component is responsible for installing the server app and its dependencies.

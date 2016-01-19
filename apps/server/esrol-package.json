@@ -14,7 +14,8 @@
   "version": "0.0.1",
   "licenses": "",
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">= 4.0.0",
+    "npm": ">= 3.3.6"
   },
   "config": {
     "esrol": {
