@@ -22,18 +22,23 @@
       "installed": false
     }
   },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "scripts": {
-    "test": "node_modules/.bin/mocha ./tests/test",
+    "app": "node_modules/grunt-cli/bin/grunt",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha ./tests/test",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "app": "node_modules/grunt-cli/bin/grunt",
+    "delete": "node_modules/pm2/bin/pm2 delete app.js",
+    "lint": "eslint app/*",
+    "list": "node_modules/pm2/bin/pm2 list",
     "start": "node_modules/pm2/bin/pm2 startup && node_modules/pm2/bin/pm2 start app.js",
     "start-custom": "node_modules/pm2/bin/pm2 start ",
-    "list": "node_modules/pm2/bin/pm2 list",
     "stop": "node_modules/pm2/bin/pm2 stop app.js",
     "stop-custom": "node_modules/pm2/bin/pm2 stop ",
-    "delete": "node_modules/pm2/bin/pm2 delete app.js",
-    "stop-all": "node_modules/pm2/bin/pm2 stop all"
+    "stop-all": "node_modules/pm2/bin/pm2 stop all",
+    "test": "node_modules/.bin/mocha ./tests/test"
   },
   "devDependencies": {
     "coveralls": "^2.11.4",
@@ -49,6 +54,7 @@
     "istanbul": "^0.4.1",
     "mocha": "^2.3.3",
     "mocha-sinon": "^1.1.4",
+    "pre-commit": "^1.1.2",
     "sinon": "^1.17.2",
     "touch": "^1.0.0"
   },

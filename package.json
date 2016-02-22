@@ -28,7 +28,12 @@
     "node": ">= 4.0.0",
     "npm": ">= 3.3.6"
   },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "scripts": {
+    "lint": "eslint lib/*",
     "postinstall": "node ./index.js",
     "test": "node_modules/.bin/mocha ./tests/test",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha ./tests/test",
@@ -55,5 +60,8 @@
     "pm2": "^0.15.10",
     "sinon": "^1.17.2",
     "touch": "^1.0.0"
+  },
+  "devDependencies": {
+    "pre-commit": "^1.1.2"
   }
 }
